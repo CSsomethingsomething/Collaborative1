@@ -1,6 +1,14 @@
 public class Professor extends Teacher {
     private String specialty, research_area ,rank;
     private boolean tenured;
+
+    public Professor(){
+        super();
+        this.specialty = "";
+        this.research_area = "";
+        this.rank = "";
+        this.tenured = false;
+    }
     
     public Professor(String spec, String research, String rank, boolean tenured,
     String ID, int sal, int num,String name, boolean alive, int age, String ssn){
@@ -23,9 +31,11 @@ public class Professor extends Teacher {
     public Professor(Professor a){
         super(a.getID(), a.getSal(), a.getYrWorked(),
         a.getName(), a.getAlive(), a.getAge(), a.getSsn());
+        
         if(a == null){
             System.exit(0);
-        }
+        };
+
         this.specialty = a.specialty;
         this.research_area = a.research_area;
         this.rank = a.rank;

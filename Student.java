@@ -3,10 +3,17 @@ public class Student extends Person{
 		private String stu_id;
 		private double gpa;
 		private String grade;
+
+        public Student(){
+            super();
+            this.stu_id = "";
+            this.gpa = 0.0;
+            this.grade = "";
+        }
 		
 		//fully loaded constructor
 		public Student(String n, int a, String s, boolean v, String s_i, double gp, String g) {
-			super(n, a, s, v);
+			super(n, v, a, s);
 			
 			//local data
 			this.stu_id = s_i;
@@ -16,7 +23,7 @@ public class Student extends Person{
 		
 		//copy constructor
 		public Student(Student stu) {
-			super(stu.getName(), stu.getAge(), stu.getSSN(), stu.getAlive());//use getter method of superclass here
+			super(stu.getName(), stu.getAlive(), stu.getAge(), stu.getSsn());//use getter method of superclass here
 			
 			this.stu_id = stu.getStudentID();//use the getter method of derived class here
 			this.gpa = stu.getGPA();

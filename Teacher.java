@@ -3,6 +3,13 @@ public class Teacher extends Person{
     //I cannot use # in variable name
     private int monthly_salary,yr_prof;
     
+    public Teacher(){
+        super();
+        this.ID = "";
+        this.monthly_salary = 0;
+        this.yr_prof = 0;
+    }
+    
     public Teacher(String ID, int sal, int num,String name, boolean alive, int age, String ssn){
         super(name, alive, age, ssn);
         this.ID = ID;
