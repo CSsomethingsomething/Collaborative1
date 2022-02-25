@@ -31,10 +31,6 @@ public class Professor extends Teacher {
     public Professor(Professor a){
         super(a.getID(), a.getSal(), a.getYrWorked(),
         a.getName(), a.getAlive(), a.getAge(), a.getSsn());
-        
-        if(a == null){
-            System.exit(0);
-        };
 
         this.specialty = a.specialty;
         this.research_area = a.research_area;
