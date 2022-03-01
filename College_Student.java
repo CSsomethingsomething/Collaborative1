@@ -12,6 +12,7 @@ public class College_Student extends Student{
         this.gpa = 0.0;
     }
 
+    
     public College_Student(String n, int a, String s, boolean v, String s_i, double gp, String g, String stuid, double gpa){
         super(n, a, s, v, s_i, gp, g);
         this.stu_id = stuid;
