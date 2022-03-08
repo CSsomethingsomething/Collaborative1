@@ -1,46 +1,42 @@
 public class Course {
-   /*the basic features of a course*/
+	/*the basic features of a course*/
 	//data
 	public String courseName;
 	private String courseNumber;
 	public String instructorName;
-	private Student[] listStudents;
+	private College_Student[] listCStudents;
 	
 	/*construct a course object (TWO constructors)*/
-	public Course(String course, String number, String instructor, Student[] students) {
+	public Course(String course, String number, String instructor, College_Student[] cstudents) {
 		this.courseName = course;
 		this.courseNumber = number;
 		this.instructorName = instructor;
 		
-		this.listStudents = new Student[students.length];//allocate memory space
-			for(int i = 0; i < students.length; i++) {
-				this.listStudents[i] = new Student(students[i]);
+		this.listCStudents = new College_Student[cstudents.length];//allocate memory space
+			for(int i = 0; i < cstudents.length; i++) {
+				this.listCStudents[i] = new College_Student(cstudents[i]);
 			}
 		
 	}
 	//copy constructor
 	public Course(Course c) {
 		//error checking
-		if(c == null || c.courseName.equals("") || c.courseNumber.equals("") || c.instructorName.equals("") || c.listStudents == null) {
+		if(c == null || c.courseName.equals("") || c.courseNumber.equals("") || c.instructorName.equals("") || c.listCStudents == null) {
 			System.out.println("Invalid course object! Stop!");
 			System.exit(0);
 		}
 		this.courseName = c.courseName;
 		this.courseNumber = c.courseNumber;
 		this.instructorName = c.instructorName;
-		
-		this.listStudents = new Student[c.listStudents.length];//allocate memory space
-			for(int i = 0; i < c.listStudents.length; i++) {
-				this.listStudents = new Student[i];
-			}
+		this.listCStudents = c.getStudents();
 		
 	}
 	//set methods
-	public void setListStudents(Student[] students) {
+	public void setListStudents(College_Student[] cstudents) {
 		//this.students = students; NOT GOOD!!!!
-		this.listStudents = new Student[students.length];//request memory space
-		for(int i = 0; i < students.length; i++) {
-			this.listStudents[i] = new Student(students[i]);
+		this.listCStudents = new College_Student[cstudents.length];//request memory space
+		for(int i = 0; i < cstudents.length; i++) {
+			this.listCStudents[i] = new College_Student(cstudents[i]);
 		}
 	}
 	
@@ -57,10 +53,10 @@ public class Course {
 	}
 	
 	//get methods
-	public Student[] getStudents() {
-		Student[] temp = new Student[this.listStudents.length];//request space in memory using internal data
+	public College_Student[] getStudents() {
+		College_Student[] temp = new College_Student[this.listCStudents.length];//request space in memory using internal data
 			for(int j = 0; j < temp.length; j++) {
-				temp[j] = new Student(this.listStudents[j]);
+				temp[j] = new College_Student(this.listCStudents[j]);
 			}
 			return temp;	
 	}
@@ -81,12 +77,12 @@ public class Course {
 	
 	public String toString() {
 		String output = "";
-		output += "Course Info:\n\nCourse Name: " + this.courseName + "\n";
-		output += "\nCourse Number: " + this.courseNumber + "\n";
-		output += "\nInstructor Name: " + this.instructorName + "\n";
-		output += "\nStudent List: ";
-				for(int k = 0; k < this.listStudents.length; k++) {
-					output += "Student # " + (k + 1) + " Info:\n" + this.listStudents[k].toString() + "\n\n";
+		output += "\nCourse Info:\nCourse Name: " + this.courseName;
+		output += "\nCourse Number: " + this.courseNumber;
+		output += "\nInstructor Name: " + this.instructorName;
+		output += "\n\nStudent List: \n";
+				for(int k = 0; k < this.listCStudents.length; k++) {
+					output += "Student #" + (k + 1) + " Info:\n" + this.listCStudents[k].toString() + "\n";
 		}
 		
 		return output;
