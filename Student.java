@@ -52,9 +52,8 @@ public class Student extends Person{
 			public String toString() {
 				String output = super.toString();
 				
-				output += "Student Info:\nStudent ID: " + this.stu_id + "\nGPA: " + this.gpa;
+				output += "More Info:\nStudent ID: " + this.stu_id + "\nGPA: " + this.gpa + "\n";
 				
 				return output;
 			}
 }
-
