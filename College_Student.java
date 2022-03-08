@@ -41,9 +41,6 @@ public class College_Student extends Student{
 
 
     public String toString(){
-        return "Student id: " + this.major + "\ngrade: " + this.grade;
+        return super.toString() + "Student Major: " + this.major + "\nGrade: " + this.grade + "\n";
     }
 }
-
-
-
