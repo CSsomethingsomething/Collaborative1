@@ -1,5 +1,5 @@
-public class Professor extends Teacher {
-    private String specialty, research_area ,rank;
+public class Professor extends Teacher{
+	private String specialty, research_area ,rank;
     private boolean tenured;
 
     public Professor(){
@@ -24,7 +24,7 @@ public class Professor extends Teacher {
         output += "Professor Info:\n\n" + "Professor Specialty: " + getSpec() +
         "\nProfessor Research Area: " + getResearch() +
         "\nProfessor Rank: " + getRank() + 
-        "\nProfessor Tenured: " + getTenured();
+        "\nProfessor Tenured: " + getTenured() + "\n\n";
         return output;
     }
     //copyCon
@@ -62,5 +62,4 @@ public class Professor extends Teacher {
     public void setTenured(boolean a){
         this.tenured = a;
     }
-    
 }
