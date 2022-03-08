@@ -1,6 +1,5 @@
-public class Teacher extends Person{
-    private String ID;
-    //I cannot use # in variable name
+public class Teacher extends Person {
+	private String ID;
     private int monthly_salary,yr_prof;
     
     public Teacher(){
@@ -47,7 +46,7 @@ public class Teacher extends Person{
         String output = super.toString();
         output += "Teacher Info:\n\n" + "Teacher ID: " + getID() +
         "\nMonthly Salary: " + getSal() + 
-        "\nYears worked: " + getYrWorked();
+        "\nYears worked: " + getYrWorked() + "\n\n";
         return output;
     }
 }
