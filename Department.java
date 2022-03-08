@@ -8,7 +8,7 @@ public class Department {
 		this.chair = new Professor();
 		this.faculty = new Professor[]{};
 		this.courses = new Course[]{};
-	};
+	}
 	public Department(Department depin){
 
 		this.chair = new Professor(depin.getChair());
@@ -22,11 +22,11 @@ public class Department {
 		for(int i = 0; i < courseargin.length; i++){
 			this.courses[i] = new Course(courseargin[i]);
 		}
-	};
+	}
 	public Department(Professor profin, Professor[] profsin, Course[] coursesin){
 		this.chair = new Professor(profin);
 
-		this.faculty = new Professor[profsin.length];
+		this.faculty = new Professor[profsin.length]; 
 		for(int i = 0; i < profsin.length; i++){
 			this.faculty[i] = new Professor(profsin[i]);
 		}
@@ -34,7 +34,7 @@ public class Department {
 		for(int i = 0; i < coursesin.length; i++){
 			this.courses[i] = new Course(coursesin[i]);
 		}
-	};
+	}
 
 	public Professor getChair(){
 		return this.chair;
@@ -63,12 +63,13 @@ public class Department {
 	}
 
 	public String toString(){
-		String retstring = "chair: " + this.chair.toString() + "\nfaculties:\n";
+		String retstring = "Chair: " + this.chair.toString() + "\nFaculties:\n";
 		for(int i = 0; i < this.faculty.length; i++){
 			retstring += this.faculty[i].toString() + "\n";
 		}
-		retstring += "courses:\n";
+		retstring += "Courses:\n";
 		for(int i = 0; i < this.courses.length; i++){
+			 System.out.println(this.courses[i]); 
 			retstring += this.courses[i].toString() + "\n";
 		}
 		return retstring;
